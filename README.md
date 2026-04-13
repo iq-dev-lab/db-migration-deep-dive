@@ -85,7 +85,7 @@ DB 마이그레이션에 관한 자료는 넘쳐납니다. 하지만 대부분�
 |------|------------|
 | [01. 스키마를 코드로 관리해야 하는 이유](./schema-management/01-why-schema-as-code.md) | 수동 DDL 실행의 3가지 문제(팀원 누락, 환경별 불일치, 이력 없음), IaC(Infrastructure as Code)와 동일한 철학으로 DB 스키마를 Git으로 관리하는 원칙, "DB도 코드처럼 버전 관리한다"는 패러다임 전환 |
 | [02. Flyway vs Liquibase — 버전 기반 vs 변경 기반](./schema-management/02-flyway-vs-liquibase.md) | Flyway의 버전 기반 SQL 파일 방식과 Liquibase의 변경셋(XML/YAML) 방식의 근본적 차이, 롤백 지원 여부, 학습 곡선, 대규모 팀에서의 선택 기준과 트레이드오프 |
-| [03. `ddl-auto=update` 금지 이유](./schema-management/03-ddl-auto-update-forbidden.md) | Hibernate가 스키마를 자동 수정할 때 발생하는 위험(의도치 않은 컬럼 삭제, 인덱스 누락, 타입 불일치), 개발/프로덕션 환경 분리 원칙, `validate` 모드로 불일치를 감지하는 안전한 방법 |
+| [03. ddl-auto=update 금지 이유](./schema-management/03-ddl-auto-update-forbidden.md) | Hibernate가 스키마를 자동 수정할 때 발생하는 위험(의도치 않은 컬럼 삭제, 인덱스 누락, 타입 불일치), 개발/프로덕션 환경 분리 원칙, `validate` 모드로 불일치를 감지하는 안전한 방법 |
 | [04. 마이그레이션 파일 명명 규칙](./schema-management/04-naming-convention.md) | `V{버전}__{설명}.sql` 형식의 규칙과 파싱 원리, 순차 번호 방식의 충돌 취약성, 타임스탬프(`yyyyMMddHHmmss`) 기반 버전으로 충돌을 최소화하는 팀 협약, PR 머지 순서와 버전 번호의 관계 |
 | [05. 마이그레이션 환경 전략](./schema-management/05-environment-strategy.md) | 로컬/개발/스테이징/프로덕션 각 환경별 마이그레이션 적용 방식, `clean-disabled` 설정으로 프로덕션 데이터 삭제를 방지하는 방법, 환경별 시드 데이터를 Repeatable 마이그레이션으로 분리하는 전략 |
 
