@@ -14,11 +14,11 @@
 <br/>
 
 [![GitHub](https://img.shields.io/badge/GitHub-dev--book--lab-181717?style=flat-square&logo=github)](https://github.com/dev-book-lab)
-[![Flyway](https://img.shields.io/badge/Flyway-9.x-CC0200?style=flat-square&logo=flyway&logoColor=white)](https://documentation.red-gate.com/fd/)
+[![Flyway](https://img.shields.io/badge/Flyway-9.x-CC0200?style=flat-square&logo=databricks&logoColor=white)](https://documentation.red-gate.com/fd/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat-square&logo=mysql&logoColor=white)](https://dev.mysql.com/doc/refman/8.0/en/innodb-online-ddl.html)
 [![Spring](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-boot/docs/current/reference/html/)
 [![Docs](https://img.shields.io/badge/Docs-38개-blue?style=flat-square&logo=readthedocs&logoColor=white)](./README.md)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square&logo=opensourceinitiative&logoColor=white)](./LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square&logo=opensourceinitiative&logoColor=white)](https://opensource.org/licenses/MIT)
 
 </div>
 
@@ -56,12 +56,12 @@ DB 마이그레이션에 관한 자료는 넘쳐납니다. 하지만 대부분�
 
 각 챕터의 첫 문서부터 바로 학습을 시작하세요!
 
-[![Chapter1](https://img.shields.io/badge/🔹_Chapter1-스키마를_코드로_관리해야_하는_이유-CC0200?style=for-the-badge&logo=flyway&logoColor=white)](./schema-management/01-why-schema-as-code.md)
-[![Chapter2](https://img.shields.io/badge/🔹_Chapter2-Flyway_내부_동작_원리-CC0200?style=for-the-badge&logo=flyway&logoColor=white)](./flyway-internals/01-flyway-schema-history.md)
+[![Chapter1](https://img.shields.io/badge/🔹_Chapter1-스키마를_코드로_관리해야_하는_이유-CC0200?style=for-the-badge&logo=databricks&logoColor=white)](./schema-management/01-why-schema-as-code.md)
+[![Chapter2](https://img.shields.io/badge/🔹_Chapter2-Flyway_내부_동작_원리-CC0200?style=for-the-badge&logo=databricks&logoColor=white)](./flyway-internals/01-flyway-schema-history.md)
 [![Chapter3](https://img.shields.io/badge/🔹_Chapter3-DDL이_Lock을_거는_원리-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](./zero-downtime-migration/01-ddl-lock-internals.md)
 [![Chapter4](https://img.shields.io/badge/🔹_Chapter4-DDL_롤백이_없는_이유-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](./rollback-recovery/01-why-ddl-no-rollback.md)
 [![Chapter5](https://img.shields.io/badge/🔹_Chapter5-마이그레이션_버전_충돌-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](./team-collaboration/01-version-conflict.md)
-[![Chapter6](https://img.shields.io/badge/🔹_Chapter6-배포_파이프라인_통합-181717?style=for-the-badge&logo=github-actions&logoColor=white)](./cicd-integration/01-migration-timing-in-pipeline.md)
+[![Chapter6](https://img.shields.io/badge/🔹_Chapter6-배포_파이프라인_통합-181717?style=for-the-badge&logo=githubactions&logoColor=white)](./cicd-integration/01-migration-timing-in-pipeline.md)
 [![Chapter7](https://img.shields.io/badge/🔹_Chapter7-Spring_Boot_+_Flyway_자동_설정-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](./spring-integration/01-spring-boot-flyway-autoconfigure.md)
 
 ---
@@ -85,7 +85,7 @@ DB 마이그레이션에 관한 자료는 넘쳐납니다. 하지만 대부분�
 |------|------------|
 | [01. 스키마를 코드로 관리해야 하는 이유](./schema-management/01-why-schema-as-code.md) | 수동 DDL 실행의 3가지 문제(팀원 누락, 환경별 불일치, 이력 없음), IaC(Infrastructure as Code)와 동일한 철학으로 DB 스키마를 Git으로 관리하는 원칙, "DB도 코드처럼 버전 관리한다"는 패러다임 전환 |
 | [02. Flyway vs Liquibase — 버전 기반 vs 변경 기반](./schema-management/02-flyway-vs-liquibase.md) | Flyway의 버전 기반 SQL 파일 방식과 Liquibase의 변경셋(XML/YAML) 방식의 근본적 차이, 롤백 지원 여부, 학습 곡선, 대규모 팀에서의 선택 기준과 트레이드오프 |
-| [03. ddl-auto=update 금지 이유](./schema-management/03-ddl-auto-update-forbidden.md) | Hibernate가 스키마를 자동 수정할 때 발생하는 위험(의도치 않은 컬럼 삭제, 인덱스 누락, 타입 불일치), 개발/프로덕션 환경 분리 원칙, `validate` 모드로 불일치를 감지하는 안전한 방법 |
+| [03. `ddl-auto=update` 금지 이유](./schema-management/03-ddl-auto-update-forbidden.md) | Hibernate가 스키마를 자동 수정할 때 발생하는 위험(의도치 않은 컬럼 삭제, 인덱스 누락, 타입 불일치), 개발/프로덕션 환경 분리 원칙, `validate` 모드로 불일치를 감지하는 안전한 방법 |
 | [04. 마이그레이션 파일 명명 규칙](./schema-management/04-naming-convention.md) | `V{버전}__{설명}.sql` 형식의 규칙과 파싱 원리, 순차 번호 방식의 충돌 취약성, 타임스탬프(`yyyyMMddHHmmss`) 기반 버전으로 충돌을 최소화하는 팀 협약, PR 머지 순서와 버전 번호의 관계 |
 | [05. 마이그레이션 환경 전략](./schema-management/05-environment-strategy.md) | 로컬/개발/스테이징/프로덕션 각 환경별 마이그레이션 적용 방식, `clean-disabled` 설정으로 프로덕션 데이터 삭제를 방지하는 방법, 환경별 시드 데이터를 Repeatable 마이그레이션으로 분리하는 전략 |
 
